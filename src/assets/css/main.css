@@ -271,6 +271,12 @@ button.block {
   width: 90vw;
   max-width: var(--max-width);
   margin: 0 auto;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 992px) {
+  .page {
+    margin-top: 0rem;
+  }
 }
 .page {
   min-height: calc(100vh - (6rem + 4rem));
