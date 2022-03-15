@@ -9,7 +9,7 @@ const AllRecipes = () => {
   } = useStaticQuery(query)
 
   return (
-    <section className="recipes-container">
+    <section className="recipes-container page">
       <RecipesList recipes={recipes} />
       <TagsList recipes={recipes} />
     </section>
