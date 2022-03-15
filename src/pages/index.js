@@ -24,9 +24,7 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <section className="page">
-          <AllRecipes />
-        </section>
+        <AllRecipes />
       </main>
     </Layout>
   )
