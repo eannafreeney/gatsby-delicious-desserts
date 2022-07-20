@@ -16,7 +16,6 @@ const Contact = () => {
             <p>Please fill out the form and we will get back to you asap.</p>
           </article>
         </section>
-
         <FeaturedRecipes />
       </Page>
     </Layout>

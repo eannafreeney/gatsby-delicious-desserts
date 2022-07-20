@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactForm = () => {
-  const [submit, setSubmit] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
     <article>
@@ -22,7 +22,7 @@ const ContactForm = () => {
         <button
           type="submit"
           className="btn block"
-          onClick={() => setSubmit(!submit)}
+          onClick={() => setIsSubmitted(!isSubmitted)}
         >
           submit
         </button>

@@ -4,11 +4,9 @@ const slugify = require("slugify")
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Get tags from GraphQL
-
   const result = await graphql(`
-    query GetRecipes {
-      allContentfulRecipes {
+    query GetTags {
+      tags: allContentfulRecipes {
         nodes {
           content {
             tags
@@ -18,9 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  // Iterate over each tag (in each recipe) and set up a template page for each one
-
-  result.data.allContentfulRecipes.nodes.forEach(recipe => {
+  result.data.tags.nodes.forEach(recipe => {
     recipe.content.tags.forEach(tag => {
       const tagSlug = slugify(tag, { lower: true })
       createPage({

@@ -1,4 +1,4 @@
-const setupTags = recipes => {
+const sortTagsbyQuantity = recipes => {
   const allTags = {};
 
   recipes.forEach(recipe => {
@@ -10,6 +10,7 @@ const setupTags = recipes => {
       }
     });
   });
+
   const newTags = Object.entries(allTags).sort((a, b) => {
     const [firstTag] = a;
     const [secondTag] = b;
@@ -19,4 +20,4 @@ const setupTags = recipes => {
   return newTags;
 };
 
-export default setupTags;
+export default sortTagsbyQuantity;

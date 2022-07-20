@@ -8,4 +8,5 @@ const Page = ({ customClass, children }) => {
 
   return <section className={classes}>{children}</section>;
 };
+
 export default Page;

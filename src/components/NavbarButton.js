@@ -2,9 +2,9 @@ import React from "react";
 
 import { FiAlignJustify } from "react-icons/fi";
 
-const NavbarButton = ({ show, setShow }) => {
+const NavbarButton = ({ onClick }) => {
   return (
-    <button className="navbar--btn" onClick={() => setShow(!show)}>
+    <button className="navbar--btn" onClick={onClick}>
       <FiAlignJustify />
     </button>
   );

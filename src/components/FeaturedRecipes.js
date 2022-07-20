@@ -19,6 +19,7 @@ const FeaturedRecipes = () => {
       }
     }
   `);
+
   return (
     <section className="featured-recipes">
       <h5 className="featured-recipes--title">Our favourite desserts</h5>

@@ -9,6 +9,7 @@ const RecipeInfo = ({ recipe }) => {
     description,
     content: { tags }
   } = recipe;
+
   return (
     <article className="recipe-info">
       <h2>{title}</h2>

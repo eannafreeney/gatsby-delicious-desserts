@@ -7,12 +7,12 @@ import Layout from "../components/Layout";
 
 const TagTemplate = ({ data, pageContext }) => {
   const recipes = data.allContentfulRecipes.nodes;
-  const tag = pageContext.tag;
+  const currentTag = pageContext.tag;
 
   return (
     <Layout>
       <Page>
-        <h2>All {tag} Recipes</h2>
+        <h2>All {currentTag} Recipes</h2>
         <div className="tag-recipes">
           <RecipesList recipes={recipes} />
         </div>

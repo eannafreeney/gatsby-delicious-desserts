@@ -9,11 +9,12 @@ import SEO from "../components/SEO";
 import RecipeHero from "../components/REcipeHero";
 
 const RecipeTemplate = ({ data }) => {
-  const recipe = data.contentfulRecipes;
+  const recipe = data.recipe;
+  const { title, description } = recipe;
 
   return (
     <Layout>
-      <SEO title={recipe.title} description={recipe.description} />
+      <SEO title={title} description={description} />
       <Page customClass="recipe-page">
         <RecipeHero recipe={recipe} />
         <RecipeContent recipe={recipe} />
@@ -24,7 +25,7 @@ const RecipeTemplate = ({ data }) => {
 
 export const query = graphql`
   query getSingleRecipe($title: String) {
-    contentfulRecipes(title: { eq: $title }) {
+    recipe: contentfulRecipes(title: { eq: $title }) {
       title
       cookTime
       servings

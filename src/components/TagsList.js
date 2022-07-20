@@ -1,12 +1,12 @@
 import React from "react";
 import slugify from "slugify";
 
-import setupTags from "../utils/setupTags";
+import sortTagsbyQuantity from "../utils/sortTagsbyQuantity";
 
 import { Link } from "gatsby";
 
-const TagsList = ({ recipes }) => {
-  const newTags = setupTags(recipes);
+const TagsList = ({ tags }) => {
+  const newTags = sortTagsbyQuantity(tags);
 
   return (
     <div className="tags-list">

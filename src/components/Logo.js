@@ -1,11 +1,16 @@
 import React from "react";
-import { Link } from "gatsby";
 
-import logo from "../assets/images/logo.png";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Logo = () => (
   <Link to="/">
-    <img src={logo} alt="simply recipes" />
+    <StaticImage
+      src="../assets/images/logo.png"
+      alt="delicious desserts"
+      placeholder="tracedSVG"
+      // layout="fullWidth"
+    />
   </Link>
 );
 

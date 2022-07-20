@@ -13,7 +13,7 @@ const AllRecipes = () => {
   return (
     <Page customClass="all-recipes">
       <RecipesList recipes={recipes} />
-      <TagsList recipes={recipes} />
+      <TagsList tags={recipes} />
     </Page>
   );
 };

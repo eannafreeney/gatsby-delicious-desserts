@@ -9,7 +9,7 @@ const links = [
   { url: "/about", title: "about" }
 ];
 
-const Navigation = ({ setShow }) => {
+const Navigation = ({ setIsDropDownMenuOpen }) => {
   return (
     <>
       {links.map(link => {
@@ -19,7 +19,7 @@ const Navigation = ({ setShow }) => {
             to={link.url}
             className="navbar--link"
             activeClassName="active-link"
-            onClick={() => setShow(false)}
+            onClick={() => setIsDropDownMenuOpen(false)}
           >
             {link.title}
           </Link>
