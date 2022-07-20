@@ -1,17 +1,17 @@
-import React from "react"
-import Layout from "../components/Layout"
-import AllRecipes from "../components/AllRecipes"
-import SEO from "../components/SEO"
+import React from "react";
 
-const Recipes = () => {
-  return (
-    <Layout>
-      <SEO title="Recipes" />
-      <main className="page">
-        <AllRecipes />
-      </main>
-    </Layout>
-  )
-}
+import AllRecipes from "../components/AllRecipes";
+import Layout from "../components/Layout";
+import Page from "../components/Page";
+import SEO from "../components/SEO";
 
-export default Recipes
+const Recipes = () => (
+  <Layout>
+    <SEO title="Recipes" />
+    <Page>
+      <AllRecipes />
+    </Page>
+  </Layout>
+);
+
+export default Recipes;

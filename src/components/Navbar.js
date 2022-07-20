@@ -1,64 +1,27 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import { FiAlignJustify } from "react-icons/fi"
-import logo from "../assets/images/logo.png"
+import React, { useState } from "react";
+
+import Logo from "./Logo";
+import NavbarButton from "./NavbarButton";
+import Navigation from "./Navigation";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  // todo use classNames
+  const linksClasses = show ? "navbar--links show-links" : "navbar--links";
 
   return (
     <nav className="navbar">
-      <div className="nav-center">
-        <div className="nav-header">
-          <Link to="/">
-            <img src={logo} alt="simply recipes" />
-          </Link>
-          <button className="nav-btn" onClick={() => setShow(!show)}>
-            <FiAlignJustify />
-          </button>
+      <div className="navbar--center">
+        <div className="navbar--header">
+          <Logo />
+          <NavbarButton show={show} setShow={setShow} />
         </div>
-        <div className={show ? "nav-links show-links" : "nav-links"}>
-          <Link
-            to="/"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShow(false)}
-          >
-            home
-          </Link>
-          <Link
-            to="/recipes"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShow(false)}
-          >
-            recipes
-          </Link>
-          <Link
-            to="/tags"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShow(false)}
-          >
-            tags
-          </Link>
-          <Link
-            to="/about"
-            className="nav-link"
-            activeClassName="active-link"
-            onClick={() => setShow(false)}
-          >
-            about
-          </Link>
-          <div className="nav-link contact-link">
-            <Link to="/contact" className="btn">
-              contact
-            </Link>
-          </div>
+        <div className={linksClasses}>
+          <Navigation setShow={setShow} />
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,23 +1,25 @@
-import React from "react"
-import { graphql } from "gatsby"
-import RecipesList from "../components/RecipesList"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import React from "react";
+import { graphql } from "gatsby";
+
+import Page from "../components/Page";
+import RecipesList from "../components/RecipesList";
+import Layout from "../components/Layout";
 
 const TagTemplate = ({ data, pageContext }) => {
-  const recipes = data.allContentfulRecipes.nodes
+  const recipes = data.allContentfulRecipes.nodes;
+  const tag = pageContext.tag;
+
   return (
     <Layout>
-      <SEO title={pageContext.tag} />
-      <main className="page">
-        <h2>All {pageContext.tag} Recipes</h2>
+      <Page>
+        <h2>All {tag} Recipes</h2>
         <div className="tag-recipes">
           <RecipesList recipes={recipes} />
         </div>
-      </main>
+      </Page>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query GetRecipeByTag($tag: String) {
@@ -36,6 +38,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default TagTemplate
+export default TagTemplate;

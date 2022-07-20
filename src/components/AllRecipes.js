@@ -1,20 +1,22 @@
-import React from "react"
-import TagsList from "./TagsList"
-import RecipesList from "./RecipesList"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+
+import Page from "./Page";
+import RecipesList from "./RecipesList";
+import TagsList from "./TagsList";
 
 const AllRecipes = () => {
   const {
-    allContentfulRecipes: { nodes: recipes },
-  } = useStaticQuery(query)
+    allContentfulRecipes: { nodes: recipes }
+  } = useStaticQuery(query);
 
   return (
-    <section className="recipes-container page">
+    <Page customClass="all-recipes">
       <RecipesList recipes={recipes} />
       <TagsList recipes={recipes} />
-    </section>
-  )
-}
+    </Page>
+  );
+};
 
 const query = graphql`
   {
@@ -33,6 +35,6 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
-export default AllRecipes
+export default AllRecipes;
